@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Interior Designer | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">NAME SURNAME</div>
+        <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Elevating Spaces through Strategic Design.</h1>
+        <p>Senior Interior Designer with 10+ years of experience in luxury residential and high-end commercial projects.</p>
+    </header>
+
+    <section id="work" class="gallery">
+        <div class="project-card">
+            <img src="project1.jpg" alt="Modern Minimalist Living Room">
+            <div class="project-info">
+                <h3>The Heights Residence</h3>
+                <p>Residential • 2025</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="project2.jpg" alt="Luxury Office Lobby">
+            <div class="project-info">
+                <h3>Neo-Corporate HQ</h3>
+                <p>Commercial • 2024</p>
+            </div>
+        </div>
+        </section>
+
+    <footer id="contact">
+        <h2>Let's collaborate on your next space.</h2>
+        <p>email@example.com | LinkedIn | Instagram</p>
+    </footer>
+
+</body>
+</html>
