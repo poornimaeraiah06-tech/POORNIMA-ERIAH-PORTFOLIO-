@@ -1,173 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Interior Designer | Portfolio</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poornima Eraiah | Senior Interior Designer</title>
 
-        :root {
-            --bg: #111;
-            --text: #fff;
-            --accent: #d4af37; /* Metallic Gold */
-        }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  line-height: 1.6;
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(black, #1a1a1a);
+}
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-        }
+header h1 {
+  font-size: 42px;
+}
 
-        /* Full Screen Snap Sections */
-        .container {
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            height: 100vh;
-        }
+header p {
+  color: #bbb;
+}
 
-        section {
-            height: 100vh;
-            display: flex;
-            scroll-snap-align: start;
-            position: relative;
-            border-bottom: 1px solid #222;
-        }
+/* SECTION */
+section {
+  padding: 60px 30px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-        /* Hero Section Styling */
-        .hero-left {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 10%;
-            background: #0a0a0a;
-        }
+h2 {
+  color: #d4af37;
+  margin-bottom: 20px;
+}
 
-        .hero-left h1 {
-            font-family: 'Bodoni Moda', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            line-height: 1;
-            margin-bottom: 20px;
-        }
+/* PROJECTS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
 
-        .experience-tag {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
+.card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+}
 
-        .hero-right {
-            flex: 1;
-            background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-        }
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-        /* Project Slides */
-        .project-content {
-            width: 40%;
-            padding: 5%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: rgba(0,0,0,0.8);
-            z-index: 2;
-        }
+.card-content {
+  padding: 15px;
+}
 
-        .project-image {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 70%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-        }
+/* SKILLS */
+.skills span {
+  background: #222;
+  padding: 8px 12px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 5px;
+}
 
-        h2 { font-family: 'Bodoni Moda', serif; font-size: 3rem; margin-bottom: 1rem; }
-        p { font-weight: 300; line-height: 1.8; color: #ccc; margin-bottom: 2rem; }
+/* EXPERIENCE */
+.exp {
+  background: #151515;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            transition: 0.4s;
-        }
-
-        .btn:hover {
-            background: var(--accent);
-            color: #000;
-        }
-
-        /* Nav */
-        nav {
-            position: fixed;
-            top: 40px;
-            left: 50px;
-            z-index: 100;
-            mix-blend-mode: difference;
-        }
-
-        .logo { font-family: 'Bodoni Moda', serif; font-size: 1.5rem; font-weight: bold; }
-
-        @media (max-width: 900px) {
-            section { flex-direction: column; }
-            .hero-right, .project-image { width: 100%; height: 50%; position: relative; }
-            .hero-left, .project-content { width: 100%; height: 50%; padding: 20px; }
-        }
-    </style>
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: black;
+  color: #777;
+}
+</style>
 </head>
+
 <body>
 
-    <nav><div class="logo">S. DESIGNER</div></nav>
+<header>
+  <h1>Poornima Eraiah</h1>
+  <p>Senior Interior Designer | Team Lead & Mentor</p>
+  <p>📞 +91 9008379892 | 📍 Bangalore</p>
+  <p>Commercial | Residential | Hospitality | Modern Luxury Spaces</p>
+</header>
 
-    <div class="container">
-        <section>
-            <div class="hero-left">
-                <span class="experience-tag">Senior Interior Architect</span>
-                <h1>Crafting <br>Silent <br>Luxury.</h1>
-                <p>5+ Years of transforming high-end residential spaces into curated experiences.</p>
-                <a href="#projects" class="btn">View Selection</a>
-            </div>
-            <div class="hero-right"></div>
-        </section>
+<section>
+  <h2>About Me</h2>
+  <p>
+    Experienced Interior Designer with 5+ years of delivering high-impact design solutions across commercial,
+    residential, and hospitality projects. Skilled in managing complete design lifecycle from concept to execution,
+    while leading teams and ensuring client satisfaction.
+  </p>
+</section>
 
-        <section id="projects">
-            <div class="project-content">
-                <span style="color:var(--accent)">01 / RESIDENTIAL</span>
-                <h2>The Obsidian Loft</h2>
-                <p>A masterclass in dark textures and bespoke lighting. Featured in Architectural Digest 2025.</p>
-                <a href="#" class="btn">Case Study</a>
-            </div>
-            <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80')"></div>
-        </section>
+<section>
+  <h2>Core Competencies</h2>
+  <div class="skills">
+    <span>Design Leadership</span>
+    <span>Production & Site Operations</span>
+    <span>Technical Detailing</span>
+    <span>Team Management</span>
+    <span>Business Development</span>
+    <span>Client Handling</span>
+  </div>
+</section>
 
-        <section>
-            <div class="project-content">
-                <span style="color:var(--accent)">02 / COMMERCIAL</span>
-                <h2>Aura Wellness</h2>
-                <p>Integrating biophilic design into a 5,000 sq ft spa environment for ultimate serenity.</p>
-                <a href="#" class="btn">Case Study</a>
-            </div>
-            <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1595332245722-293074411194?auto=format&fit=crop&w=1200&q=80')"></div>
-        </section>
+<section>
+  <h2>Technical Expertise</h2>
+  <div class="skills">
+    <span>AutoCAD</span>
+    <span>SketchUp</span>
+    <span>Civil 3D</span>
+    <span>VRay</span>
+    <span>Enscape</span>
+    <span>D5 Render</span>
+    <span>Cabinet Vision</span>
+    <span>Coohom</span>
+    <span>Infurnia</span>
+  </div>
+</section>
 
-        <section style="background: var(--accent); color: #000; text-align: center; justify-content: center; flex-direction: column;">
-            <h2 style="font-size: 5rem;">Let's Build.</h2>
-            <p style="color: #333;">Available for collaborations and senior consultations.</p>
-            <p><strong>hello@sdesigner.com</strong></p>
-        </section>
+<section>
+  <h2>Featured Projects</h2>
+  <div class="projects">
+
+    <div class="card">
+      <img src="project1.jpg">
+      <div class="card-content">
+        <h3>Luxury Residential Project</h3>
+        <p>Complete design execution from planning to handover with modern luxury aesthetics.</p>
+      </div>
     </div>
+
+    <div class="card">
+      <img src="project2.jpg">
+      <div class="card-content">
+        <h3>Modular Kitchen Design</h3>
+        <p>Efficient layout with smart storage and premium finishes.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="project3.jpg">
+      <div class="card-content">
+        <h3>Hospitality Interior</h3>
+        <p>Functional and aesthetic design aligned with brand identity.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Professional Experience</h2>
+
+  <div class="exp">
+    <h3>Senior Interior Designer – Q Oak Interiors (2024 – Present)</h3>
+    <p>Leading design direction, managing teams, handling clients, and delivering high-quality projects.</p>
+  </div>
+
+  <div class="exp">
+    <h3>Interior Designer & Project Coordinator – Welfurn Interiors (2023 – 2024)</h3>
+    <p>Handled end-to-end project execution, production coordination, and site delivery.</p>
+  </div>
+
+  <div class="exp">
+    <h3>Interior Designer – Woodlenz (2022 – 2023)</h3>
+    <p>Managed manufacturing coordination, FF&E, and technical detailing.</p>
+  </div>
+
+  <div class="exp">
+    <h3>Technical Drafting Specialist – Samruddhi Interiors (2020 – 2022)</h3>
+    <p>Created 3D models, renders, and technical drawings for client approvals.</p>
+  </div>
+
+</section>
+
+<section>
+  <h2>Education</h2>
+  <p>B.E. Civil Engineering – Channabasaveshwara Institute of Technology</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>📞 +91 9008379892</p>
+  <p>📧 poornimaeraiah@gmail.com</p>
+  <p>📍 Bangalore</p>
+</section>
+
+<footer>
+  <p>© 2026 Poornima Eraiah | Senior Interior Designer</p>
+</footer>
 
 </body>
 </html>
