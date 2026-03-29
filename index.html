@@ -2,131 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior Interior Designer | Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Senior Interior Designer Portfolio</title>
     <style>
-        :root {
-            --primary: #2c2c2c;
-            --accent: #a89471; /* Sophisticated Champagne/Gold */
-            --light: #f9f9f9;
-            --text: #4a4a4a;
+        :root { --black: #1a1a1a; --gray: #757575; --bg: #ffffff; }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background: var(--bg); 
+            color: var(--black);
+            padding: 4vw;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        /* Clean Header */
+        header { margin-bottom: 10vh; max-width: 900px; }
+        h1 { font-size: 3rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 0; }
+        .subtitle { color: var(--gray); font-size: 1.2rem; margin-top: 5px; }
+        
+        /* Stats/Bio */
+        .bio { margin-top: 40px; font-size: 1.1rem; line-height: 1.6; max-width: 600px; }
+        .exp { font-weight: bold; border-bottom: 2px solid var(--black); padding-bottom: 2px; }
+
+        /* Project Grid - Asymmetrical */
+        .gallery { 
+            display: grid; 
+            grid-template-columns: 1.5fr 1fr; 
+            gap: 4vw; 
+            margin-top: 10vh;
         }
 
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
+        .project { margin-bottom: 8vh; text-decoration: none; color: inherit; display: block; }
+        .project.wide { grid-column: span 2; }
+        
+        img { width: 100%; height: auto; filter: grayscale(20%); transition: 0.5s; }
+        img:hover { filter: grayscale(0%); }
 
-        /* Navigation */
-        nav {
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
+        .project-info { margin-top: 15px; display: flex; justify-content: space-between; align-items: baseline; }
+        .project-title { font-size: 1.4rem; font-weight: 500; }
+        .project-meta { color: var(--gray); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        footer { margin-top: 10vh; border-top: 1px solid #eee; padding-top: 40px; color: var(--gray); }
 
-        .nav-links a {
-            margin-left: 2rem;
-            text-decoration: none;
-            color: var(--primary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: 0.3s;
+        @media (max-width: 768px) {
+            .gallery { grid-template-columns: 1fr; }
+            .project.wide { grid-column: span 1; }
+            h1 { font-size: 2rem; }
         }
+    </style>
+</head>
+<body>
 
-        .nav-links a:hover {
-            color: var(--accent);
-        }
+    <header>
+        <h1>Senior Interior Designer</h1>
+        <div class="subtitle">5+ Years of Spatial Strategy & High-End Curation</div>
+        <p class="bio">
+            Specializing in luxury residential and boutique commercial environments. 
+            Focused on the intersection of <span class="exp">materiality, light, and human flow</span>.
+        </p>
+    </header>
 
-        /* Hero Section */
-        header {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
-                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-        }
+    <main class="gallery">
+        <a href="#" class="project wide">
+            <img src="https://images.unsplash.com/photo-1616486341351-79b524009a24?auto=format&fit=crop&w=1600&q=80" alt="Living Room">
+            <div class="project-info">
+                <span class="project-title">The Glass House Residency</span>
+                <span class="project-meta">Residential · 2025</span>
+            </div>
+        </a>
 
-        .hero-content h1 {
-            font-size: 4rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
+        <a href="#" class="project">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80" alt="Office">
+            <div class="project-info">
+                <span class="project-title">Obsidian HQ</span>
+                <span class="project-meta">Workspace</span>
+            </div>
+        </a>
 
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            border-left: 3px solid var(--accent);
-            padding-left: 20px;
-        }
+        <a href="#" class="project">
+            <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80" alt="Kitchen">
+            <div class="project-info">
+                <span class="project-title">Sienna Kitchen</span>
+                <span class="project-meta">Custom Millwork</span>
+            </div>
+        </a>
+    </main>
 
-        /* Portfolio Grid */
-        .section-title {
-            text-align: center;
-            padding: 4rem 0 2rem;
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
+    <footer>
+        <p>Contact: studio@designer.com / @designer_interiors</p>
+    </footer>
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-            padding: 0 5% 5rem;
-        }
-
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            height: 450px;
-            cursor: pointer;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .project-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255,255,255,0.95);
-            padding: 2rem;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-
-        .project-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .project
+</body>
+</html>
