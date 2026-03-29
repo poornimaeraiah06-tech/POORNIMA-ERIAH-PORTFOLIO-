@@ -2,94 +2,172 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Senior Interior Designer Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Interior Designer | Portfolio</title>
     <style>
-        :root { --black: #1a1a1a; --gray: #757575; --bg: #ffffff; }
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            background: var(--bg); 
-            color: var(--black);
-            padding: 4vw;
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap');
+
+        :root {
+            --bg: #111;
+            --text: #fff;
+            --accent: #d4af37; /* Metallic Gold */
         }
 
-        /* Clean Header */
-        header { margin-bottom: 10vh; max-width: 900px; }
-        h1 { font-size: 3rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 0; }
-        .subtitle { color: var(--gray); font-size: 1.2rem; margin-top: 5px; }
-        
-        /* Stats/Bio */
-        .bio { margin-top: 40px; font-size: 1.1rem; line-height: 1.6; max-width: 600px; }
-        .exp { font-weight: bold; border-bottom: 2px solid var(--black); padding-bottom: 2px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* Project Grid - Asymmetrical */
-        .gallery { 
-            display: grid; 
-            grid-template-columns: 1.5fr 1fr; 
-            gap: 4vw; 
-            margin-top: 10vh;
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
         }
 
-        .project { margin-bottom: 8vh; text-decoration: none; color: inherit; display: block; }
-        .project.wide { grid-column: span 2; }
-        
-        img { width: 100%; height: auto; filter: grayscale(20%); transition: 0.5s; }
-        img:hover { filter: grayscale(0%); }
+        /* Full Screen Snap Sections */
+        .container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
 
-        .project-info { margin-top: 15px; display: flex; justify-content: space-between; align-items: baseline; }
-        .project-title { font-size: 1.4rem; font-weight: 500; }
-        .project-meta { color: var(--gray); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        section {
+            height: 100vh;
+            display: flex;
+            scroll-snap-align: start;
+            position: relative;
+            border-bottom: 1px solid #222;
+        }
 
-        footer { margin-top: 10vh; border-top: 1px solid #eee; padding-top: 40px; color: var(--gray); }
+        /* Hero Section Styling */
+        .hero-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10%;
+            background: #0a0a0a;
+        }
 
-        @media (max-width: 768px) {
-            .gallery { grid-template-columns: 1fr; }
-            .project.wide { grid-column: span 1; }
-            h1 { font-size: 2rem; }
+        .hero-left h1 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .experience-tag {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-right {
+            flex: 1;
+            background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        }
+
+        /* Project Slides */
+        .project-content {
+            width: 40%;
+            padding: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(0,0,0,0.8);
+            z-index: 2;
+        }
+
+        .project-image {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 70%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        h2 { font-family: 'Bodoni Moda', serif; font-size: 3rem; margin-bottom: 1rem; }
+        p { font-weight: 300; line-height: 1.8; color: #ccc; margin-bottom: 2rem; }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 40px;
+            left: 50px;
+            z-index: 100;
+            mix-blend-mode: difference;
+        }
+
+        .logo { font-family: 'Bodoni Moda', serif; font-size: 1.5rem; font-weight: bold; }
+
+        @media (max-width: 900px) {
+            section { flex-direction: column; }
+            .hero-right, .project-image { width: 100%; height: 50%; position: relative; }
+            .hero-left, .project-content { width: 100%; height: 50%; padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Senior Interior Designer</h1>
-        <div class="subtitle">5+ Years of Spatial Strategy & High-End Curation</div>
-        <p class="bio">
-            Specializing in luxury residential and boutique commercial environments. 
-            Focused on the intersection of <span class="exp">materiality, light, and human flow</span>.
-        </p>
-    </header>
+    <nav><div class="logo">S. DESIGNER</div></nav>
 
-    <main class="gallery">
-        <a href="#" class="project wide">
-            <img src="https://images.unsplash.com/photo-1616486341351-79b524009a24?auto=format&fit=crop&w=1600&q=80" alt="Living Room">
-            <div class="project-info">
-                <span class="project-title">The Glass House Residency</span>
-                <span class="project-meta">Residential · 2025</span>
+    <div class="container">
+        <section>
+            <div class="hero-left">
+                <span class="experience-tag">Senior Interior Architect</span>
+                <h1>Crafting <br>Silent <br>Luxury.</h1>
+                <p>5+ Years of transforming high-end residential spaces into curated experiences.</p>
+                <a href="#projects" class="btn">View Selection</a>
             </div>
-        </a>
+            <div class="hero-right"></div>
+        </section>
 
-        <a href="#" class="project">
-            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80" alt="Office">
-            <div class="project-info">
-                <span class="project-title">Obsidian HQ</span>
-                <span class="project-meta">Workspace</span>
+        <section id="projects">
+            <div class="project-content">
+                <span style="color:var(--accent)">01 / RESIDENTIAL</span>
+                <h2>The Obsidian Loft</h2>
+                <p>A masterclass in dark textures and bespoke lighting. Featured in Architectural Digest 2025.</p>
+                <a href="#" class="btn">Case Study</a>
             </div>
-        </a>
+            <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80')"></div>
+        </section>
 
-        <a href="#" class="project">
-            <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80" alt="Kitchen">
-            <div class="project-info">
-                <span class="project-title">Sienna Kitchen</span>
-                <span class="project-meta">Custom Millwork</span>
+        <section>
+            <div class="project-content">
+                <span style="color:var(--accent)">02 / COMMERCIAL</span>
+                <h2>Aura Wellness</h2>
+                <p>Integrating biophilic design into a 5,000 sq ft spa environment for ultimate serenity.</p>
+                <a href="#" class="btn">Case Study</a>
             </div>
-        </a>
-    </main>
+            <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1595332245722-293074411194?auto=format&fit=crop&w=1200&q=80')"></div>
+        </section>
 
-    <footer>
-        <p>Contact: studio@designer.com / @designer_interiors</p>
-    </footer>
+        <section style="background: var(--accent); color: #000; text-align: center; justify-content: center; flex-direction: column;">
+            <h2 style="font-size: 5rem;">Let's Build.</h2>
+            <p style="color: #333;">Available for collaborations and senior consultations.</p>
+            <p><strong>hello@sdesigner.com</strong></p>
+        </section>
+    </div>
 
 </body>
 </html>
