@@ -1,191 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Poornima | Senior Interior Designer</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Interior Designer | Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c2c2c;
+            --accent: #a89471; /* Sophisticated Champagne/Gold */
+            --light: #f9f9f9;
+            --text: #4a4a4a;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0e0e0e;
-      color: #fff;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
 
-    header {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(black, #1a1a1a);
-    }
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-    header h1 {
-      font-size: 45px;
-      margin: 0;
-      letter-spacing: 2px;
-    }
+        /* Navigation */
+        nav {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
 
-    header p {
-      color: #bbb;
-      font-size: 18px;
-    }
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
 
-    h2 {
-      border-left: 4px solid #c5a47e;
-      padding-left: 10px;
-      margin-bottom: 20px;
-    }
+        .nav-links a:hover {
+            color: var(--accent);
+        }
 
-    .about {
-      line-height: 1.8;
-      color: #ccc;
-    }
+        /* Hero Section */
+        header {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
+        .hero-content h1 {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
 
-    .card {
-      background: #1a1a1a;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+        }
 
-    .card:hover {
-      transform: scale(1.04);
-    }
+        /* Portfolio Grid */
+        .section-title {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            padding: 0 5% 5rem;
+        }
 
-    .card-content {
-      padding: 15px;
-    }
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            height: 450px;
+            cursor: pointer;
+        }
 
-    .card h3 {
-      margin: 0;
-      color: #e6c89c;
-    }
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
 
-    .card p {
-      font-size: 14px;
-      color: #bbb;
-    }
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
 
-    .experience {
-      background: #151515;
-      padding: 20px;
-      border-radius: 10px;
-    }
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
 
-    .skills span {
-      display: inline-block;
-      background: #2a2a2a;
-      padding: 10px 15px;
-      margin: 5px;
-      border-radius: 6px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      background: #000;
-      color: #888;
-    }
-
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>Poornima Eraiah</h1>
-  <p>Senior Interior Designer | 5+ Years Experience</p>
-</header>
-
-<section>
-  <h2>About Me</h2>
-  <p class="about">
-    Senior Interior Designer with 5+ years of experience in residential and modular interiors.
-    Specialized in creating luxurious, functional, and client-focused spaces.
-    Strong expertise in space planning, material selection, and 3D visualization.
-  </p>
-</section>
-
-<section>
-  <h2>Professional Experience</h2>
-  <div class="experience">
-    <h3>Senior Interior Designer – SK Interiors & Designs</h3>
-    <p>Handled end-to-end residential projects including planning, execution, and client coordination.</p>
-    <p>Delivered high-quality interiors with a focus on modern luxury and efficient space utilization.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Featured Projects</h2>
-
-  <div class="projects">
-
-    <div class="card">
-      <img src="project1.jpg">
-      <div class="card-content">
-        <h3>Luxury Living Room – Bangalore</h3>
-        <p>Elegant modern design with premium finishes, ambient lighting, and customized furniture.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="project2.jpg">
-      <div class="card-content">
-        <h3>Modular Kitchen</h3>
-        <p>Smart layout with optimized storage, matte finishes, and functional workflow design.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="project3.jpg">
-      <div class="card-content">
-        <h3>Master Bedroom Design</h3>
-        <p>Warm and minimal design with soft textures and integrated lighting.</p>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-<section>
-  <h2>Skills</h2>
-  <div class="skills">
-    <span>AutoCAD</span>
-    <span>SketchUp</span>
-    <span>3Ds Max</span>
-    <span>Space Planning</span>
-    <span>Lighting Design</span>
-    <span>Client Handling</span>
-  </div>
-</section>
-
-<section>
-  <h2>Contact</h2>
-  <p>📞 9986102340</p>
-  <p>📍 Bangalore</p>
-  <p>📧 your@email.com</p>
-</section>
-
-<footer>
-  <p>© 2026 Poornima Eraiah | Senior Interior Designer</p>
-</footer>
-
-</body>
-</html>
+        .project
